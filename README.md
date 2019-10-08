@@ -9,10 +9,11 @@ AutoMapper
 .NET Core Native 
 Unit of Work
 Repository e Generic Repository
+Dapper 
 FluentValidator
 
 #Arquitetura
-Arquitetura completa com separação de responsabilidades, SOLID e Clean Code
+Arquitetura com separação de responsabilidades, SOLID e Clean Code
 DDD – Domain Driven Design (Camadas e Domain Model Pattern)
 Domain Notifications
 CQRS (Com consistência imediata)
