@@ -1,5 +1,19 @@
 # Superdigital
 Super Digital
 
-# Tecnoligas 
-C# SQL Server 
+#Tecnologias/Recursos Implementados
+ASP.NET Core 2.2 (com .NET Core)
+ASP.NET Identity Core
+Entity Framework Core
+AutoMapper
+.NET Core Native 
+Unit of Work
+Repository e Generic Repository
+FluentValidator
+
+#Arquitetura
+Arquitetura completa com separação de responsabilidades, SOLID e Clean Code
+DDD – Domain Driven Design (Camadas e Domain Model Pattern)
+Domain Notifications
+CQRS (Com consistência imediata)
+
