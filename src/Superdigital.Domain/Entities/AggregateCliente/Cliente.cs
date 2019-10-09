@@ -4,19 +4,20 @@ using System.Linq;
 using FluentValidation.Results;
 using Superdigital.CoreShared.DomainObjects;
 using Superdigital.CoreShared.ValueObjects;
+using Superdigital.Domain.Entities.AggregateConta;
 using Superdigital.Domain.Enum;
 
 namespace Superdigital.Domain.Entities.AggregatePessoa
 {
-    public class Pessoa : Entity, IAggregateRoot
+    public class Cliente: Entity, IAggregateRoot
     {
-        protected Pessoa()
+        protected Cliente(bool ativo)
         {
-            
+            Ativo = ativo;
             _enderecosLista = new List<Enderecos>();
         }
 
-        public Pessoa(string nomePessoa, DateTime dtNascimento, string nomeMae, string nomePai, string nomeSocial, CpfCnpjVo cpf, EmailVo email, TipoPessoa tipoPessoa)
+        public Cliente(string nomePessoa, DateTime dtNascimento, string nomeMae, string nomePai, string nomeSocial, CpfCnpjVo cpf, EmailVo email, TipoPessoa tipoPessoa)
         {
             NomePessoa = nomePessoa;
             DtNascimento = dtNascimento;
@@ -26,6 +27,7 @@ namespace Superdigital.Domain.Entities.AggregatePessoa
             Cpf = cpf;
             Email = email;
             TipoPessoa = tipoPessoa;
+            Ativo = true;
             DataCriacao = DateTime.Now;
             _enderecosLista = new List<Enderecos>();
         }
@@ -40,7 +42,9 @@ namespace Superdigital.Domain.Entities.AggregatePessoa
         public DateTime DataCriacao { get; private set; }
         public IReadOnlyCollection<Enderecos> Enderecos => _enderecosLista;
         public bool Ativo { get; private set; }
-
+         
+        // EF propriedades de navegacao
+        public IEnumerable<ContaCorrente> ContaCorrente { get; private set; }
         private readonly List<Enderecos> _enderecosLista;
 
         public ValidationResult AdicionarEndereco(Enderecos endereco)

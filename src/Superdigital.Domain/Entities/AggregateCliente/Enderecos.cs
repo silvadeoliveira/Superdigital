@@ -1,6 +1,5 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using FluentValidation;
+ using FluentValidation;
 using Superdigital.CoreShared.DomainObjects;
 using Superdigital.CoreShared.ValueObjects;
 using ValidationResult = FluentValidation.Results.ValidationResult;
@@ -17,13 +16,13 @@ namespace Superdigital.Domain.Entities.AggregatePessoa
         public UfVo Estado { get; private set; }
         public DateTime DataCriacao { get; private set; }
         public bool Ativo { get; private set; }
-        public Guid PessoaId { get; private set; }
+        public Guid ClienteId { get; private set; }
 
 
         // EF propriedades de navegacao
-        public Pessoa Pessoa { get; private set; }
+        public Cliente Cliente { get; private set; }
 
-        public Enderecos(string endereco, string complemento, string bairro, string cidade, CepVo cep, UfVo estado, Guid pessoaId)
+        public Enderecos(string endereco, string complemento, string bairro, string cidade, CepVo cep, UfVo estado, Guid clienteId)
         {
             Endereco = endereco;
             Complemento = complemento;
@@ -31,7 +30,7 @@ namespace Superdigital.Domain.Entities.AggregatePessoa
             Cidade = cidade;
             Cep = cep;
             Estado = estado;
-            PessoaId = pessoaId;
+            ClienteId = clienteId;
             Ativo = true;
         }
 
@@ -56,9 +55,9 @@ namespace Superdigital.Domain.Entities.AggregatePessoa
             RuleFor(e => e.Cidade)
                 .NotEmpty().WithMessage("O Cidade precisa ser fornecido")
                 .Length(2, 100).WithMessage("O Cidade precisa ter entre 2 e 150 caracteres");
-            RuleFor(e => e.PessoaId)
-                .Must(ValidadePessoaId)
-                .WithMessage("Este  Id pessoa é inválido.");
+            RuleFor(e => e.ClienteId)
+                .Must(ValidadeClienteId)
+                .WithMessage("Este  Id Cliente é inválido.");
             RuleFor(e => e.Cep)
                 .Must(ValidadeCep)
                 .WithMessage("Este Cep inválido.");
@@ -78,9 +77,9 @@ namespace Superdigital.Domain.Entities.AggregatePessoa
         {
             return estado.Validar();
         }
-        private static bool ValidadePessoaId(Guid pessoaId)
+        private static bool ValidadeClienteId(Guid pessoaId)
         {
-            return pessoaId.Equals("00000000-0000-0000-0000-000000000000");
+            return pessoaId.Equals(Guid.Empty);
         }
 
     }

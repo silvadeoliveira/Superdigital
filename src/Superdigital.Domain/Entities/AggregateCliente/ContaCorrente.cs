@@ -6,7 +6,7 @@ using Superdigital.Domain.Enum;
 
 namespace Superdigital.Domain.Entities.AggregateConta
 {
-    public class ContaCorrente : EntityBaseConta<ContaCorrente>, IAggregateRoot
+    public class ContaCorrente : EntityBaseConta<ContaCorrente>
     {
         protected ContaCorrente(){}
 
@@ -16,10 +16,13 @@ namespace Superdigital.Domain.Entities.AggregateConta
             TitularId = titularId;
             TipoContaId = (int)TipoConta.ContaCorrente;
         }
+
+
+        public Guid TitularId { get; private set; }
         public bool Ativo { get; private set; }
 
         // EF propriedades de navegacao
-        public Pessoa TitutalarConta { get; private set; }
+        public Cliente TitutalarConta { get; private set; }
         public int TipoContaId { get; private set; }
 
         public override bool Saca(decimal valor)
@@ -44,7 +47,7 @@ namespace Superdigital.Domain.Entities.AggregateConta
 
         }
 
-        public static class PedidoFactory
+        public static class ContaCorrenteFactory
         {
             public static ContaCorrente NovaContaCorrente(decimal saldo, Guid titularId)
             {
@@ -53,6 +56,18 @@ namespace Superdigital.Domain.Entities.AggregateConta
                     TitularId = titularId,
                     DataAberturaConta = DateTime.Now,
                     Saldo = saldo
+                };
+
+                return contaCorrente;
+
+            }
+            public static ContaCorrente FecharContaCorrente(Guid titularId)
+            {
+                var contaCorrente = new ContaCorrente
+                {
+                    TitularId = titularId,
+                    Ativo = false
+                    
                 };
 
                 return contaCorrente;
