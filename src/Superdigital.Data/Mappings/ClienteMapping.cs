@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Superdigital.Domain.Entities.AggregatePessoa;
-
+using Superdigital.Domain.Entities.AggregateCliente;
+ 
 namespace Superdigital.Data.Mappings
 {
     public class ClienteMapping : IEntityTypeConfiguration<Cliente>

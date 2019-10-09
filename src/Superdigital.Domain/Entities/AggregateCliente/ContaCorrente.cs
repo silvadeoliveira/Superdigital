@@ -1,10 +1,9 @@
 ﻿using System;
-using Superdigital.CoreShared.DomainObjects;
 using Superdigital.Domain.Entities.AggregatePessoa;
 using Superdigital.Domain.Entities.EntityBaseConta;
 using Superdigital.Domain.Enum;
 
-namespace Superdigital.Domain.Entities.AggregateConta
+namespace Superdigital.Domain.Entities.AggregateCliente
 {
     public class ContaCorrente : EntityBaseConta<ContaCorrente>
     {

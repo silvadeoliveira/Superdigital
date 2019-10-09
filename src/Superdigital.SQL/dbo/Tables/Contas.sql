@@ -6,9 +6,11 @@
     [Saldo]             DECIMAL (18, 2)  NOT NULL,
     [Ativo]             BIT              NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC),
-    CONSTRAINT [fk_PesConta] FOREIGN KEY ([TitularId]) REFERENCES [dbo].[Clientes] ([Id]),
-    CONSTRAINT [fk_TipoContaConta] FOREIGN KEY ([TipoContaId]) REFERENCES [dbo].[TipoConta] ([Id])
+    CONSTRAINT [FK_ClienteConta] FOREIGN KEY ([TitularId]) REFERENCES [dbo].[Clientes] ([Id]),
+    CONSTRAINT [FK_TipoContaConta] FOREIGN KEY ([TipoContaId]) REFERENCES [dbo].[TipoConta] ([Id])
 );
+
+
 
 
 

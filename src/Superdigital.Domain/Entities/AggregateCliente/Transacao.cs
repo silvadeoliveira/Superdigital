@@ -4,7 +4,7 @@ using FluentValidation.Results;
 using Superdigital.CoreShared.DomainObjects;
 using Superdigital.Domain.Enum;
 
-namespace Superdigital.Domain.Entities.AggregateConta
+namespace Superdigital.Domain.Entities.AggregateCliente
 {
     public class Transacao : Entity
     {
@@ -48,14 +48,14 @@ namespace Superdigital.Domain.Entities.AggregateConta
                 .WithMessage("O valor deve estar entre 1.00 e 50.000");
         }
 
-        private static bool ValidadeNumeroContaOrigem(Guid NumeroConta)
+        private static bool ValidadeNumeroContaOrigem(Guid numeroConta)
         {
-            return NumeroConta.Equals(Guid.Empty);
+            return numeroConta.Equals(Guid.Empty);
         }
 
-        private static bool ValidadeNumeroContaDestino(Guid NumeroConta)
+        private static bool ValidadeNumeroContaDestino(Guid numeroConta)
         {
-            return NumeroConta.Equals(Guid.Empty);
+            return numeroConta.Equals(Guid.Empty);
         }
     }
 }

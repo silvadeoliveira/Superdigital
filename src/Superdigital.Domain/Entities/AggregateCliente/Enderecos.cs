@@ -2,6 +2,7 @@
  using FluentValidation;
 using Superdigital.CoreShared.DomainObjects;
 using Superdigital.CoreShared.ValueObjects;
+using Superdigital.Domain.Entities.AggregateCliente;
 using ValidationResult = FluentValidation.Results.ValidationResult;
 
 namespace Superdigital.Domain.Entities.AggregatePessoa

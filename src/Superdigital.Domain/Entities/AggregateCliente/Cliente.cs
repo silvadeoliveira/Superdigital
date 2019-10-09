@@ -4,10 +4,10 @@ using System.Linq;
 using FluentValidation.Results;
 using Superdigital.CoreShared.DomainObjects;
 using Superdigital.CoreShared.ValueObjects;
-using Superdigital.Domain.Entities.AggregateConta;
+using Superdigital.Domain.Entities.AggregatePessoa;
 using Superdigital.Domain.Enum;
 
-namespace Superdigital.Domain.Entities.AggregatePessoa
+namespace Superdigital.Domain.Entities.AggregateCliente
 {
     public class Cliente: Entity, IAggregateRoot
     {

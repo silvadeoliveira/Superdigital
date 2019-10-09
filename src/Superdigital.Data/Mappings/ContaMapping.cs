@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Superdigital.Domain.Entities.AggregateConta;
+using Superdigital.Domain.Entities.AggregateCliente;
 
 namespace Superdigital.Data.Mappings
 {
