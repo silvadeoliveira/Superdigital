@@ -1,11 +1,11 @@
 ﻿using Superdigital.CoreShared.Data;
 using Superdigital.Domain.Entities.AggregateCliente;
-using Superdigital.Domain.Entities.AggregatePessoa;
 
-namespace Superdigital.Domain.IRepository.AggregateConta
+
+namespace Superdigital.Domain.IRepository.AggregateCliente
 {
     public interface ICliente : IRepository<Cliente>
     {
-        
+
     }
 }

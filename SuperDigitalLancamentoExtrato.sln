@@ -7,15 +7,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{14
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{05DB5595-545D-4611-B4EC-AC6B09AC85B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Superdigital.CoreShared", "src\Superdigital.CoreShared\Superdigital.CoreShared.csproj", "{E738FF7B-DD7E-4E8C-ABDD-7DBEC4B1F462}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Superdigital.CoreShared", "src\Superdigital.CoreShared\Superdigital.CoreShared.csproj", "{E738FF7B-DD7E-4E8C-ABDD-7DBEC4B1F462}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Superdigital.Domain", "src\Superdigital.Domain\Superdigital.Domain.csproj", "{CFD0F705-A8AE-4290-BAD9-254C448B4F1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Superdigital.Domain", "src\Superdigital.Domain\Superdigital.Domain.csproj", "{CFD0F705-A8AE-4290-BAD9-254C448B4F1A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{4E8DB9DF-1AA0-4D78-B413-EF741751AD1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Superdigital.Data", "src\Superdigital.Data\Superdigital.Data.csproj", "{25139FB3-8103-4FE7-91FD-E6635EFFBB29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Superdigital.Data", "src\Superdigital.Data\Superdigital.Data.csproj", "{25139FB3-8103-4FE7-91FD-E6635EFFBB29}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Superdigital.SQL", "src\Superdigital.SQL\Superdigital.SQL.sqlproj", "{AB935E00-F094-4FCA-86C8-74AE902F1595}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Superdigital.Application", "src\Superdigital.Application\Superdigital.Application\Superdigital.Application.csproj", "{5C499000-40AA-44D7-B048-D66B204C98CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Superdigital.CoreShared.IoC", "src\Superdigital.CoreShared.IoC\Superdigital.CoreShared.IoC.csproj", "{CBF7B86F-2EBF-42FE-9230-D3BE78A736FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +45,14 @@ Global
 		{AB935E00-F094-4FCA-86C8-74AE902F1595}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB935E00-F094-4FCA-86C8-74AE902F1595}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AB935E00-F094-4FCA-86C8-74AE902F1595}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5C499000-40AA-44D7-B048-D66B204C98CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C499000-40AA-44D7-B048-D66B204C98CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C499000-40AA-44D7-B048-D66B204C98CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C499000-40AA-44D7-B048-D66B204C98CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBF7B86F-2EBF-42FE-9230-D3BE78A736FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF7B86F-2EBF-42FE-9230-D3BE78A736FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF7B86F-2EBF-42FE-9230-D3BE78A736FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF7B86F-2EBF-42FE-9230-D3BE78A736FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +62,8 @@ Global
 		{CFD0F705-A8AE-4290-BAD9-254C448B4F1A} = {1424FF66-8D59-4CED-9BAE-730E3F479EFA}
 		{25139FB3-8103-4FE7-91FD-E6635EFFBB29} = {1424FF66-8D59-4CED-9BAE-730E3F479EFA}
 		{AB935E00-F094-4FCA-86C8-74AE902F1595} = {4E8DB9DF-1AA0-4D78-B413-EF741751AD1A}
+		{5C499000-40AA-44D7-B048-D66B204C98CC} = {1424FF66-8D59-4CED-9BAE-730E3F479EFA}
+		{CBF7B86F-2EBF-42FE-9230-D3BE78A736FA} = {4E8DB9DF-1AA0-4D78-B413-EF741751AD1A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5217637A-C02B-451B-863B-A77326E55EBC}

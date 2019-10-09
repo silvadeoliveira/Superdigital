@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using FluentValidation.Results;
 using Superdigital.CoreShared.DomainObjects;
+using Superdigital.CoreShared.Enum;
 using Superdigital.CoreShared.ValueObjects;
 using Superdigital.Domain.Entities.AggregatePessoa;
-using Superdigital.Domain.Enum;
 
 namespace Superdigital.Domain.Entities.AggregateCliente
 {
@@ -17,7 +17,7 @@ namespace Superdigital.Domain.Entities.AggregateCliente
             _enderecosLista = new List<Enderecos>();
         }
 
-        public Cliente(string nomePessoa, DateTime dtNascimento, string nomeMae, string nomePai, string nomeSocial, CpfCnpjVo cpf, EmailVo email, TipoPessoa tipoPessoa)
+        public Cliente(string nomePessoa, DateTime dtNascimento, string nomeMae, string nomePai, string nomeSocial, CpfCnpjVo cpf, EmailVo email, TipoCliente tipoCliente)
         {
             NomePessoa = nomePessoa;
             DtNascimento = dtNascimento;
@@ -26,7 +26,7 @@ namespace Superdigital.Domain.Entities.AggregateCliente
             NomeSocial = nomeSocial;
             Cpf = cpf;
             Email = email;
-            TipoPessoa = tipoPessoa;
+            TipoCliente = tipoCliente;
             Ativo = true;
             DataCriacao = DateTime.Now;
             _enderecosLista = new List<Enderecos>();
@@ -36,7 +36,7 @@ namespace Superdigital.Domain.Entities.AggregateCliente
         public string NomeMae { get; private set; }
         public string NomePai { get; private set; }
         public string NomeSocial { get; set; }
-        public TipoPessoa TipoPessoa { get; set; }
+        public TipoCliente TipoCliente { get; set; }
         public CpfCnpjVo Cpf { get; private set; }
         public EmailVo Email { get; private set; }
         public DateTime DataCriacao { get; private set; }

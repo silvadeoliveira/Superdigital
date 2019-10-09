@@ -1,4 +1,4 @@
-﻿namespace Superdigital.Domain.Enum
+﻿namespace Superdigital.CoreShared.Enum
 {
     public enum TipoConta
     {
@@ -6,13 +6,21 @@
         ConataPoupanca = 2
     }
 
-    public enum TipoTransacaoEnum
+    public enum TipoTransacao
     {
         Transferencia = 1,
         Ted = 2
     }
 
-    public enum TipoPessoa
+    public enum StatusTrasferencia
+    {
+        Pendete = 1,
+        Credito = 2,
+        Estorno = 3,
+        Debito = 4
+    }
+
+    public enum TipoCliente
     {
         Titular = 1,
         ResponsavelFinaceiro = 2,

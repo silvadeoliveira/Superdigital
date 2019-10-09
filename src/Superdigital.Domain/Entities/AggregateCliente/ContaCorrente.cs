@@ -1,7 +1,7 @@
 ﻿using System;
-using Superdigital.Domain.Entities.AggregatePessoa;
+using Superdigital.CoreShared.Enum;
 using Superdigital.Domain.Entities.EntityBaseConta;
-using Superdigital.Domain.Enum;
+
 
 namespace Superdigital.Domain.Entities.AggregateCliente
 {
@@ -21,7 +21,7 @@ namespace Superdigital.Domain.Entities.AggregateCliente
         public bool Ativo { get; private set; }
 
         // EF propriedades de navegacao
-        public Cliente TitutalarConta { get; private set; }
+        public Cliente TitutalarConta { get; }
         public int TipoContaId { get; private set; }
 
         public override bool Saca(decimal valor)

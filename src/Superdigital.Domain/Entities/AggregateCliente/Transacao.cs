@@ -2,21 +2,23 @@
 using FluentValidation;
 using FluentValidation.Results;
 using Superdigital.CoreShared.DomainObjects;
-using Superdigital.Domain.Enum;
+using Superdigital.CoreShared.Enum;
 
 namespace Superdigital.Domain.Entities.AggregateCliente
 {
     public class Transacao : Entity
     {
-        public Transacao(TipoTransacaoEnum tipoTransacao, Guid numeroContaOrigem, Guid numeroContaDestino, double valor)
+        public Transacao(TipoTransacao tipoTransacaoId, Guid numeroContaOrigem, Guid numeroContaDestino, double valor, StatusTrasferencia statusTrasferenciaId)
         {
-            TipoTransacao = tipoTransacao;
+            TipoTransacaoId = tipoTransacaoId;
             DtTransacao = DateTime.Now;
             NumeroContaOrigem = numeroContaOrigem;
             NumeroContaDestino = numeroContaDestino;
             Valor = valor;
+            StatusTrasferenciaId = statusTrasferenciaId;
         }
-        public TipoTransacaoEnum TipoTransacao { get; private set; }
+        public TipoTransacao TipoTransacaoId { get; private set; }
+        public StatusTrasferencia StatusTrasferenciaId { get; private set; }
         public DateTime DtTransacao { get; private set; }
         public Guid NumeroContaOrigem { get; private set; }
         public Guid NumeroContaDestino { get; private set; }
@@ -35,10 +37,6 @@ namespace Superdigital.Domain.Entities.AggregateCliente
     {
         public TransacaoAplicavelValidation()
         {
-            RuleFor(c => c.NumeroContaOrigem)
-                .Must(ValidadeNumeroContaOrigem)
-                .WithMessage("Número de Conta Origem é inválido.");
-
             RuleFor(c => c.NumeroContaDestino)
                 .Must(ValidadeNumeroContaDestino)
                 .WithMessage("Número de Conta Destino é inválido.");
@@ -46,11 +44,6 @@ namespace Superdigital.Domain.Entities.AggregateCliente
             RuleFor(c => c.Valor)
                 .ExclusiveBetween(1, 50000)
                 .WithMessage("O valor deve estar entre 1.00 e 50.000");
-        }
-
-        private static bool ValidadeNumeroContaOrigem(Guid numeroConta)
-        {
-            return numeroConta.Equals(Guid.Empty);
         }
 
         private static bool ValidadeNumeroContaDestino(Guid numeroConta)
